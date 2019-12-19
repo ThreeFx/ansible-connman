@@ -12,6 +12,12 @@
       - wpasupplicant
   when: connman_use_wpa_supplicant
 
+- name: Create systemd service directory
+  become: True
+  file:
+    path: /etc/systemd/system/connman.service.d
+    state: directory
+
 - name: Disable connman dns proxy
   become: True
   copy:
