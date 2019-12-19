@@ -9,7 +9,7 @@
   become: True
   apt:
     name:
-      - wpa_supplicant
+      - wpasupplicant
   when: connman_use_wpa_supplicant
 
 - name: Disable connman dns proxy
