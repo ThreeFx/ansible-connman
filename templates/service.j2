@@ -1,0 +1,27 @@
+[service_{{ item.name }}]
+Type={{ item.type }}
+Name={{ item.name }}
+{% if item.ssid is defined %}
+SSID={{ item.ssid }}
+{% endif %}
+{% if item.passphrase is defined %}
+Passphrase={{ item.passphrase }}
+{% endif %}
+{% if item.ipv4 is defined %}
+IPv4={{ item.ipv4 }}
+{% endif %}
+{% if item.ipv6 is defined %}
+IPv6={{ item.ipv6 }}
+{% endif %}
+{% if item.eap is defined %}
+EAP={{ item.eap }}
+{% endif %}
+{% if item.phase2 is defined %}
+Phase2={{ item.phase2 }}
+{% endif %}
+{% if item.identity is defined %}
+Identity={{ item.identity }}
+{% endif %}
+{% if item.anonymous_identity is defined %}
+AnonymousIdentity={{ item.anonymous_identity }}
+{% endif %}

@@ -1,0 +1,47 @@
+---
+- name: Install connman
+  become: True
+  apt:
+    name:
+      - connman
+
+- name: Install wpa_supplicant
+  become: True
+  apt:
+    name:
+      - wpa_supplicant
+  when: connman_use_wpa_supplicant
+
+- name: Disable connman dns proxy
+  become: True
+  copy:
+    src: override.conf
+    dest: /etc/systemd/system/connman.service.d/override.conf
+  notify:
+    - restart connman
+    - restart wpa_supplicant
+
+- name: Configure connman
+  become: True
+  template:
+    src: main.conf.j2
+    dest: /etc/connman/main.conf
+  notify:
+    - restart connman
+    - restart wpa_supplicant
+
+- name: Link /run/connman/resolv.conf to /etc/
+  become: True
+  file:
+    src: /run/connman/resolv.conf
+    dest: /etc/resolv.conf
+    force: yes
+    state: link
+
+- name: Configure networks
+  template:
+    src: service.j2
+    dest: "/var/lib/connman/{{ item.name }}.config"
+  notify:
+    - restart connman
+    - restart wpa_supplicant

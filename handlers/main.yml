@@ -1,0 +1,14 @@
+---
+- name: restart connman
+  become: True
+  systemd:
+    name: connman
+    state: restarted
+    enabled: yes
+
+- name: restart wpa_supplicant
+  become: True
+  systemd:
+    name: wpa_supplicant
+    state: restarted
+    enabled: yes

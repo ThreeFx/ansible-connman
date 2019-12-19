@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Ben Fiedler
+  description: Ansible role to install and configure connman
+
+  license: BSD
+
+  min_ansible_version: 2.7
+
+  platforms:
+    - name: Fedora
+    versions:
+      - 10
+
+  galaxy_tags: []
+
+dependencies: []

@@ -1,0 +1,15 @@
+---
+connman_enable_online_check: "false" # whether to enable the online-check (connect to a specific ip)
+connman_use_wpa_supplicant: true     # whether to install wpa_supplicant
+
+connman_networks: []               # optional, networks to configure
+# - name: mynetwork                # required, name of the network
+#   type: wifi                     # required, type of network (allowed: ethernet | wifi)
+#   ssid: ABCDEF1234567890         # optional, SSID (hex-encoded) of the network
+#   passphrase: secret             # optional, passphrase for the network
+#   ipv4: addr/netm/gatew          # optional, IPv4 configuration. Also possible: off | dhcp
+#   ipv6: addr/netm/gatew          # optional, IPv6 configuration. Also possible: off | auto
+#   eap: peap                      # optional, for WPA2-Enterprise
+#   phase2: MSCHAPV2               # optional, for WPA2-Enterprise
+#   identity: a@b.foo              # optional, for WPA2-Enterprise
+#   anonymous_identity: anon@b.foo # optional, for WPA2-Enterprise
