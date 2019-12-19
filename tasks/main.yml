@@ -50,7 +50,7 @@
     src: service.j2
     dest: "/var/lib/connman/{{ item.name }}.config"
     mode: 0600
-  with_items: "{{ connman_networks }}
+  with_items: "{{ connman_networks }}"
   notify:
     - restart connman
     - restart wpa_supplicant
