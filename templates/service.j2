@@ -4,6 +4,9 @@ Name={{ item.name }}
 {% if item.ssid is defined %}
 SSID={{ item.ssid }}
 {% endif %}
+{% if item.hidden is defined %}
+Hidden={{ item.hidden }}
+{% endif %}
 {% if item.passphrase is defined %}
 Passphrase={{ item.passphrase }}
 {% endif %}
