@@ -4,6 +4,7 @@ connman_use_wpa_supplicant: true     # whether to install wpa_supplicant
 
 connman_networks: []               # optional, networks to configure
 # - name: mynetwork                # required, name of the network
+#   service_name: company_network  # optional, service- and filename of the network (default: same as name)
 #   type: wifi                     # required, type of network (allowed: ethernet | wifi)
 #   ssid: ABCDEF1234567890         # optional, SSID (hex-encoded) of the network
 #   hidden: "true"                 # optional, whether this network is hidden or not

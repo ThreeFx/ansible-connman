@@ -1,4 +1,4 @@
-[service_{{ item.name }}]
+[service_{{ item.service_name if item.service_name is defined else item.name }}]
 Type={{ item.type }}
 Name={{ item.name }}
 {% if item.ssid is defined %}
